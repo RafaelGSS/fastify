@@ -51,11 +51,12 @@ const warning = require('./lib/warnings')
 const noopSet = require('./lib/noop-set')
 const { defaultInitOptions } = getSecuredInitialConfig
 
+const errors = require('./lib/errors')
 const {
   FST_ERR_BAD_URL,
   AVVIO_ERRORS_MAP,
   appendStackTrace
-} = require('./lib/errors')
+} = errors
 
 const { buildErrorHandler } = require('./lib/error-handler.js')
 
@@ -309,6 +310,7 @@ function fastify (options) {
     // custom error handling
     setNotFoundHandler,
     setErrorHandler,
+    errors,
     // Set fastify initial configuration options read-only object
     initialConfig
   }

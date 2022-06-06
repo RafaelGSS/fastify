@@ -307,3 +307,6 @@ expectError(server.decorate<string>('test', true))
 expectError(server.decorate<(myNumber: number) => number>('test', function (myNumber: number): string {
   return ''
 }))
+
+expectType<object>(server.errors)
+expectType<FastifyError>(server.errors.FST_ERR_NOT_FOUND)

@@ -44,6 +44,7 @@ export interface FastifyInstance<
   prefix: string;
   version: string;
   log: Logger;
+  errors: Record<string, FastifyError>;
 
   withTypeProvider<Provider extends FastifyTypeProvider>(): FastifyInstance<RawServer, RawRequest, RawReply, Logger, Provider>;
 
